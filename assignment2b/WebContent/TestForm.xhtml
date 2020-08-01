@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>JSF Form Page</title>
+</h:head> 
+<h:body> 
+	<ui:composition template="/layouts/commonLayout.xhtml">	
+		
+		<ui:define name="content">
+			<h:form>
+				<h:outputLabel>First Name:</h:outputLabel> 
+				<h:inputText type="text" value="#{user.firstName}"></h:inputText>
+				<br>
+				</br>
+				<h:outputLabel>Last Name:</h:outputLabel> 
+				<h:inputText type="text" value="#{user.lastName}"></h:inputText><br></br>
+				<h:commandButton action="#{formController.onSubmit()}" value="Submit"></h:commandButton>
+				<br>
+				</br>
+				<h:commandButton action="#{formController.onFlash()}" value="Flash"></h:commandButton>
+			</h:form>
+			<h:messages/>
+		</ui:define>
+			
+	</ui:composition>
+</h:body> 
+</html>
